@@ -415,7 +415,68 @@ footer img {
 
 }
 
+/* =====================
+      MOBILE < 360px
+ ===================== */
+@media (max-width: 360px) {
 
+    header {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .name {
+        font-size: 2.5rem;
+        display: flex;
+    }
+
+    .menu ul {
+        display: flex;
+    }
+    .menu li {
+        font-size: 14px;
+        margin: 0 auto;
+    }
+
+    .date_time {
+        /* width: 92%; */
+        width: 99%;
+        padding: 20px;
+    }
+
+    .title h2 {
+        /* font-size: 3.8rem; */
+        font-size: 4.3rem;
+    }
+
+    .guest-name {
+        font-size: 2.6rem;
+    }
+
+    .grid_2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .frame {
+        width: 100%;
+    }
+
+    .frame h2 {
+        font-size: 2.8rem;
+    }
+
+    .frame img {
+        width: 90%;
+    }
+    @media (max-width: 739px) {
+    .menu a {
+        font-size: 16px;
+        padding: 4px 6px;
+    }
+}
+
+}
 
 /* hiệu ứng tim */
 .heart-beat {
