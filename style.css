@@ -1,0 +1,472 @@
+/* =====================
+   RESET + CẤU HÌNH CHUNG
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0ede9;
+    background-image: url("https://i.pinimg.com/736x/d5/72/8e/d5728e3c27e4080826238e062c30b7b9.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    color: #0b1220;
+}
+
+.card {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* =====================
+       HEADER
+ ===================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1100px;
+    height: 85px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    z-index: 999;
+    border-radius: 0 0 25px 25px;
+}
+
+
+.name {
+    font-size: 4.5rem;
+    font-family: "Lovers Quarrel", cursive;
+}
+
+.name i {
+    color: #d95359;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 22px;
+    color: #2b2929;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.menu li:hover {
+    background: #166c42;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
+/* =====================
+    KHỐI NỘI DUNG
+ ===================== */
+/* main {
+    margin-top: 120px;
+} */
+
+main{
+    margin-top: 13rem;          /* tạo khoảng cách với header */
+}
+
+.grid_row{
+    margin-top: 10.5rem;
+    margin-bottom: 10.5rem;
+}
+
+.date_time {
+    width: 75%;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.27);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* =====================
+    TIÊU ĐỀ SAVE THE DATE
+ ===================== */
+.title {
+    background: #fff;
+    border: 3px solid #d6c4c4;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.title h2 {
+    font-family: "Lovers Quarrel";
+    font-size: 5rem;
+}
+
+.title h3 {
+    font-family: "Style Script", cursive;
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #d95359;
+}
+
+.title p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.title button {
+    /* border: none;
+    background: transparent;
+    font-size: 40px;
+    margin-bottom: 15px; */
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px;
+    color: red;
+    font-size: 25px;
+}
+.title button:hover {
+    background-color: #be8f90;
+    color:#d95359;
+}
+/* =====================
+     TÊN NGƯỜI NHẬN
+ ===================== */
+.guest-box {
+    margin: 15px auto;
+    width: fit-content;
+    padding: 15px 25px;
+    background: rgba(255,240,240,0.75);
+    border: 2px solid #dc5355;
+    border-radius: 10px;
+}
+
+.guest-box p {
+    font-family: "Style Script";
+    font-size: 22px;
+    color: #c24648;
+}
+
+.guest-name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3.3rem;
+    color: #167349;
+}
+
+/* =====================
+        LỊCH
+ ===================== */
+.month_year {
+    /* background: #fff;
+    border: 3px solid #d6c4c4;
+    padding: 25px;
+    border-radius: 12px; */
+
+    width: 100%;
+    padding: 20px;
+    border: 4px solid #d7c5c5;
+    border-radius: 6px;
+    background: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.month_year h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-family: "Borel", cursive;
+    font-weight: 600;
+    font-style: normal;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.active-day {
+    background: #d1b1b1;
+    color: red;
+    padding: 7px;
+    border-radius: 50%;
+    background: #cda7a7;
+    font-weight: bold;
+    font-size: 25PX;
+    line-height: 29px;
+    justify-content: center;
+}
+
+/* =====================
+      COUNTDOWN
+ ===================== */
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.count-item {
+    /* text-align: center;
+    font-family: "Style Script"; */
+
+    text-align: center;
+    color: #cda7a7;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.count-item span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* =====================
+   GRID SỰ KIỆN CƯỚI
+ ===================== */
+.grid_row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.grid_2 {
+    display: flex;
+    gap: 25px;
+}
+
+.frame {
+    width: 48%;
+    background: rgba(238,237,237,0.8);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+}
+
+.frame h2 {
+    font-family: "Lovers Quarrel";
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+    font-weight: 550;
+}
+
+.frame img {
+    width: 75%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.time {
+    color: #dc5355;
+    font-size: 24px;
+    margin: 8px 0;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.frame p {
+    font-size: 21px;
+    margin-bottom: 15px;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.frame button {
+    background: white;
+    border: 2px solid #d6c4c4;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.frame button:hover {
+    background: #c89f9f;
+}
+.frame a:hover {
+    color: #fff;
+}
+
+.frame a {
+    text-decoration: none;
+    font-family: "Style Script";
+    font-size: 20px;
+    color: #0b1220;
+}
+/* Hover */
+.menu a:hover {
+    color: #d95359;
+    transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(217,83,89,0.25);
+    border-radius: 20px;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Trang đang active */
+.menu a.active {
+    color: #d95359;
+}
+
+.menu a.active::after {
+    width: 100%;
+}
+
+/* Click rung nhẹ */
+.menu a:active {
+    transform: scale(0.95);
+}
+/* =====================
+       FOOTER
+ ===================== */
+footer img {
+    width: 55%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+
+/* =====================
+      MOBILE < 739px
+ ===================== */
+@media (max-width: 739px) {
+
+    header {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .name {
+        font-size: 2.5rem;
+        display: flex;
+    }
+
+    .menu ul {
+        display: flex;
+    }
+    .menu li {
+        font-size: 15px;
+        margin: 0 auto;
+    }
+
+    .date_time {
+        /* width: 92%; */
+        width: 99%;
+        padding: 20px;
+    }
+
+    .title h2 {
+        /* font-size: 3.8rem; */
+        font-size: 4.3rem;
+    }
+
+    .guest-name {
+        font-size: 2.6rem;
+    }
+
+    .grid_2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .frame {
+        width: 100%;
+    }
+
+    .frame h2 {
+        font-size: 2.8rem;
+    }
+
+    .frame img {
+        width: 90%;
+    }
+    @media (max-width: 739px) {
+    .menu a {
+        font-size: 16px;
+        padding: 4px 6px;
+    }
+}
+
+}
+
+
+
+/* hiệu ứng tim */
+.heart-beat {
+    display: inline-block; /* QUAN TRỌNG */
+    color: #e63946;
+    animation: heartbeat 1.1s infinite;
+    transform-origin: center;
+}
+
+/* Keyframes */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.35);
+    }
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.25);
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* 💖 TIM BAY */
+.falling-heart {
+    position: fixed;
+    top: -20px;
+    color: #e63946;
+    font-size: 18px;
+    animation: fall linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 23px;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) scale(0.6);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,651 @@
+/* Moblie: width < 740px */
+@media only screen and (max-width: 739px) {
+    .mobile {
+        display: block;
+    }
+ .grid_2 {
+        flex-wrap: nowrap !important;   /* giữ ngang */
+    }
+    .frame {
+        width: 50% !important;          /* 2 khung chia đôi màn hình */
+    }
+
+    
+header {
+    /* display: flex;
+    padding: 3rem;
+    background-color: rgba(172, 170, 170, 0.5);
+    color: #2c2929;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+     */
+
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 10rem;              
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    z-index: 1000;
+    justify-content: space-around;               
+}
+
+    .name {
+        font-size: 5rem; 
+        font-family: "Lovers Quarrel", cursive;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 5px; /* tăng khoảng cách giữa các chữ */
+    }
+    .fa-solid {
+        color: #dc5355;
+    }
+
+    .menu ul a li{
+        display: inline-flex;
+        list-style: none;       /*bỏ chấm*/
+        color: #2c2929;
+        margin-right: 15px;
+        font-size: 19px;
+        font-weight: 600;
+    }
+    .menu ul li:hover {
+        color: #fff;
+        background-color: #186c41;
+        border-radius: 100%;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+
+    /* main */
+
+.date_time {
+    
+    width: 70%;
+    margin: 45px auto;
+    background-color: #fff;
+    box-shadow:  0 6px 18px rgba(0,0,0,0.12); /* nổi lên */
+    align-items: center; 
+    background: rgba(255,255,255,0.22);        /* nền trắng mờ */
+    backdrop-filter: blur(8px);                 /* làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(8px);         /* cho Safari */
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    color: #0b1220;
+}
+.title {
+    width: 100%;
+    padding: 20px;
+    border: 4px solid #d7c5c5;
+    border-radius: 6px;
+    background: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+}
+.title h2 {
+    font-family: "Lovers Quarrel", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+}
+.title h3 {
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+}
+.title p,
+.frame p {
+  font-family: "Borel", cursive;
+  font-style: normal;
+}
+button {
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px;
+}
+button:hover {
+    background-color: #be8f90;
+    color: red;
+}
+.month_year {
+    width: 100%;
+    padding: 20px;
+    border: 4px solid #d7c5c5;
+    border-radius: 6px;
+    background: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    }
+
+.month_year h2 {
+    font-family: "Borel", cursive;
+    font-weight: 600;
+    font-style: normal;
+}
+.calendar-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2b3a4a;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.calendar th {
+    padding-bottom: 10px;
+    font-weight: 500;
+    color: #6a6a6a;
+    font-size: 14px;
+}
+
+.calendar td {
+    padding: 8px 0;
+    color: #444;
+    font-size: 14px;
+}
+
+.active-day {
+    background: #cda7a7;
+    color: rgb(231, 10, 10);
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 29px;
+    justify-content: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.count-item {
+    text-align: center;
+    color: #cda7a7;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+.count-item span {
+    font-size: 28px;
+    font-weight: 600;
+    display: block;
+}
+
+.count-item p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+/* grid */
+.grid__row {
+    /* display: flex;
+    flex-wrap: wrap;    
+    width: 90%; */
+
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;        /* khoảng cách giữa 2 khung */
+    width: 100%;
+
+
+}
+.grid__1 {
+    width: 35%;
+    margin: 15px auto;
+    text-align: center;
+}
+.grid_2 {
+    display: flex;
+    flex-wrap: nowrap;   /* ❗ Không cho xuống hàng */
+    justify-content: center;
+    gap: 20px;
+}
+/* .frame {
+    width: 55%;
+     background: url("https://i.pinimg.com/736x/40/43/37/40433747eb80bf6718644520820d821b.jpg");
+} */
+.frame {
+    /* background-color: rgba(238, 237, 237, 0.7);
+    width: 50%;
+    margin: 0 auto;
+    justify-items: center;
+    border-radius: 10%; */
+
+    width: 47%;
+    min-width: 200px;    /* ép nhỏ khi màn hẹp */
+    background-color: rgba(238, 237, 237, 0.7);
+    border-radius: 10%;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+.frame h2 {
+    font-family: "Lovers Quarrel", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+}
+.frame img{
+    /* width: 50%;
+    margin: 0 25%; */
+
+    width: 60%;
+    display: block;
+    margin: 0 auto 18px;
+    border-radius: 6px;
+}
+.frame .time {
+    text-align: center;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #dc5355;
+    font-size: 25px;
+    margin-top: 17px;
+}
+.frame p {
+    font-size: 23px;
+    text-align: center;
+}
+.frame button {
+    width: 9rem;
+    margin: 0 29% 29px;
+}
+button a {
+    text-decoration: none;
+    color: #0b1220;
+    font-size: 19px;
+    text-align: center;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer img {
+    width: 50%;
+    border-radius: 50%;
+    margin: 3rem 25%;
+}
+
+}
+
+
+
+body{
+    background: #f1f0ec;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    /* padding-top: 13rem; */
+    background-image: url("https://i.pinimg.com/736x/d5/72/8e/d5728e3c27e4080826238e062c30b7b9.jpg");                     
+}
+*{
+    box-sizing: inherit;
+}
+html {
+    line-height: 1.6rem;
+     box-sizing: border-box;
+}  
+
+/* .grid-app {
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 1500px;
+    max-width: 100%;
+    margin: 0 auto ;
+    z-index: 1;
+    position: fixed;
+} */
+
+
+header {
+    /* display: flex;
+    padding: 3rem;
+    background-color: rgba(172, 170, 170, 0.5);
+    color: #2c2929;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+     */
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;              
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    /* padding: 0 2rem; */
+    z-index: 1000;
+    justify-content: center;     
+    border-radius: 2.5rem;      
+}
+
+    .name {
+        font-size: 5rem; 
+        font-family: "Lovers Quarrel", cursive;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 9px; /* tăng khoảng cách giữa các chữ */
+        /* margin-right: 35px;   */
+    }
+    .fa-solid {
+        color: #dc5355;
+    }
+
+    .menu ul a li{
+        display: inline-flex;
+        list-style: none;       /*bỏ chấm*/
+        color: #2c2929;
+        /* margin-right: 15px; */
+        padding: 0 30px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .menu ul li:hover {
+        color: #fff;
+        background-color: #186c41;
+        border-radius: 100%;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+
+    /* main */
+
+.date_time {
+    
+    width: 70%;
+    margin: 45px auto;
+    background-color: #fff;
+    box-shadow:  0 6px 18px rgba(0,0,0,0.12); /* nổi lên */
+    align-items: center; 
+    background: rgba(255,255,255,0.22);        /* nền trắng mờ */
+    backdrop-filter: blur(8px);                 /* làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(8px);         /* cho Safari */
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    color: #0b1220;
+}
+.title {
+    width: 100%;
+    padding: 20px;
+    border: 4px solid #d7c5c5;
+    border-radius: 6px;
+    background: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+}
+.title h2 {
+    font-family: "Lovers Quarrel", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+}
+.title h3 {
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+}
+.title p,
+.frame p {
+  font-family: "Borel", cursive;
+  font-style: normal;
+}
+button {
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px;
+}
+button:hover {
+    background-color: #be8f90;
+    color: red;
+}
+
+/* ========= KHU VỰC TÊN NGƯỜI NHẬN ========== */
+.guest-box {
+    margin-top: 25px;
+    padding: 15px 20px;
+    border: 2px solid #dc5355;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    background: rgba(255, 240, 240, 0.65);
+    text-align: center;
+}
+
+.guest-box p {
+    margin: 0;
+    font-size: 20px;
+    font-family: "Style Script", cursive;
+    color: #dc5355;
+}
+
+.guest-name {
+    margin-top: 30%;
+    font-size: 30px;
+    font-family: "Lovers Quarrel", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+/* Mobile tối ưu */
+@media only screen and (max-width: 739px) {
+    .guest-box {
+        padding: 12px;
+    }
+    .guest-name {
+        font-size: 2.5rem;
+    }
+}
+
+
+
+
+
+
+
+.month_year {
+    width: 100%;
+    padding: 20px;
+    border: 4px solid #d7c5c5;
+    border-radius: 6px;
+    background: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    }
+
+.month_year h2 {
+    font-family: "Borel", cursive;
+    font-weight: 600;
+    font-style: normal;
+}
+.calendar-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2b3a4a;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.calendar th {
+    padding-bottom: 10px;
+    font-weight: 500;
+    color: #6a6a6a;
+    font-size: 14px;
+}
+
+.calendar td {
+    padding: 8px 0;
+    color: #444;
+    font-size: 14px;
+}
+
+.active-day {
+    background: #cda7a7;
+    color: rgb(231, 10, 10);
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 29px;
+    justify-content: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.count-item {
+    text-align: center;
+    color: #cda7a7;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+.count-item span {
+    font-size: 28px;
+    font-weight: 600;
+    display: block;
+}
+
+.count-item p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+/* grid */
+.grid__row {
+    /* display: flex;
+    flex-wrap: wrap;    
+    width: 90%; */
+
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;        /* khoảng cách giữa 2 khung */
+    width: 100%;
+
+
+}
+.grid__1 {
+    width: 35%;
+    margin: 15px auto;
+    text-align: center;
+}
+.grid_2 {
+    display: flex;
+    flex-wrap: nowrap;   /* ❗ Không cho xuống hàng */
+    justify-content: center;
+    gap: 20px;
+}
+/* .frame {
+    width: 55%;
+     background: url("https://i.pinimg.com/736x/40/43/37/40433747eb80bf6718644520820d821b.jpg");
+} */
+.frame {
+    /* background-color: rgba(238, 237, 237, 0.7);
+    width: 50%;
+    margin: 0 auto;
+    justify-items: center;
+    border-radius: 10%; */
+
+    width: 47%;
+    min-width: 200px;    /* ép nhỏ khi màn hẹp */
+    background-color: rgba(238, 237, 237, 0.7);
+    border-radius: 10%;
+    margin: 35px 0;
+    padding: 10px;
+    text-align: center;
+}
+.frame h2 {
+    font-family: "Lovers Quarrel", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+}
+.frame img{
+    /* width: 50%;
+    margin: 0 25%; */
+
+    width: 60%;
+    display: block;
+    margin: 0 auto 18px;
+    border-radius: 6px;
+}
+.frame .time {
+    text-align: center;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #dc5355;
+    font-size: 25px;
+    margin-top: 17px;
+}
+.frame p {
+    font-size: 23px;
+    text-align: center;
+}
+.frame button {
+    width: 9rem;
+    margin: 0 29% 29px;
+}
+button a {
+    text-decoration: none;
+    color: #0b1220;
+    font-size: 19px;
+    text-align: center;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer img {
+    width: 50%;
+    border-radius: 50%;
+    margin: 3rem 25%;
+}
