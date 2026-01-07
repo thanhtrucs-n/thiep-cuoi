@@ -121,7 +121,46 @@ setInterval(createFallingHeart, 400);
 // });
 
 
+// document.addEventListener("DOMContentLoaded", async () => {
+
+//     const params = new URLSearchParams(window.location.search);
+//     const guestId = params.get("id");
+
+//     const guestElement = document.querySelector(".guest-name#guestName");
+//     if (!guestElement) return;
+
+//     if (!guestId) {
+//         guestElement.textContent = "Quý khách";
+//         return;
+//     }
+
+//     try {
+//         const res = await fetch("guests.csv");
+//         const text = await res.text();
+
+//         const rows = text.split("\n").slice(1); // bỏ header
+//         const guests = {};
+
+//         rows.forEach(row => {
+//             const [id, name] = row.split(",");
+//             if (id && name) {
+//                 guests[id.trim()] = name.trim();
+//             }
+//         });
+
+//         guestElement.textContent = guests[guestId] || "Quý khách";
+
+//     } catch (err) {
+//         console.error("Không đọc được file CSV", err);
+//         guestElement.textContent = "Quý khách";
+//     }
+
+// });
+
 document.addEventListener("DOMContentLoaded", async () => {
+
+    const SHEET_URL =
+        "https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv";
 
     const params = new URLSearchParams(window.location.search);
     const guestId = params.get("id");
@@ -135,24 +174,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const res = await fetch("guests.csv");
+        const res = await fetch(SHEET_URL);
         const text = await res.text();
 
-        const rows = text.split("\n").slice(1); // bỏ header
+        const rows = text.split("\n").slice(1);
         const guests = {};
 
         rows.forEach(row => {
             const [id, name] = row.split(",");
-            if (id && name) {
-                guests[id.trim()] = name.trim();
-            }
+            if (id && name) guests[id.trim()] = name.trim();
         });
 
         guestElement.textContent = guests[guestId] || "Quý khách";
 
-    } catch (err) {
-        console.error("Không đọc được file CSV", err);
+    } catch (e) {
         guestElement.textContent = "Quý khách";
     }
-
 });
