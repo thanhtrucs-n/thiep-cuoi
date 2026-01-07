@@ -90,32 +90,69 @@ setInterval(createFallingHeart, 400);
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
 
-    const guests = {
-        khach01: "Bạn Tuyết",
-        khach02: "Anh Minh",
-        khach03: "Chị Lan",
-        khach04: "Gia đình Anh Hùng"
-    };
+//     const guests = {
+//         khach01: "Bạn Tuyết",
+//         khach02: "Anh Minh",
+//         khach03: "Chị Lan",
+//         khach04: "Gia đình Anh Hùng"
+//     };
+
+//     const params = new URLSearchParams(window.location.search);
+//     const guestId = params.get("id");
+
+//     const guestElement = document.querySelector(".guest-name#guestName");
+
+// if (guestElement) {
+//     guestElement.textContent = guests[guestId] || "Quý khách";
+// }
+
+//     document.querySelectorAll("a[href]").forEach(link => {
+//         if (!guestId) return;
+
+//         const url = new URL(link.href, window.location.origin);
+//         if (!url.searchParams.has("id")) {
+//             url.searchParams.set("id", guestId);
+//             link.href = url.toString();
+//         }
+//     });
+
+// });
+
+
+document.addEventListener("DOMContentLoaded", async () => {
 
     const params = new URLSearchParams(window.location.search);
     const guestId = params.get("id");
 
     const guestElement = document.querySelector(".guest-name#guestName");
+    if (!guestElement) return;
 
-if (guestElement) {
-    guestElement.textContent = guests[guestId] || "Quý khách";
-}
+    if (!guestId) {
+        guestElement.textContent = "Quý khách";
+        return;
+    }
 
-    document.querySelectorAll("a[href]").forEach(link => {
-        if (!guestId) return;
+    try {
+        const res = await fetch("guests.csv");
+        const text = await res.text();
 
-        const url = new URL(link.href, window.location.origin);
-        if (!url.searchParams.has("id")) {
-            url.searchParams.set("id", guestId);
-            link.href = url.toString();
-        }
-    });
+        const rows = text.split("\n").slice(1); // bỏ header
+        const guests = {};
+
+        rows.forEach(row => {
+            const [id, name] = row.split(",");
+            if (id && name) {
+                guests[id.trim()] = name.trim();
+            }
+        });
+
+        guestElement.textContent = guests[guestId] || "Quý khách";
+
+    } catch (err) {
+        console.error("Không đọc được file CSV", err);
+        guestElement.textContent = "Quý khách";
+    }
 
 });
