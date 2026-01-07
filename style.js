@@ -160,7 +160,7 @@ setInterval(createFallingHeart, 400);
 document.addEventListener("DOMContentLoaded", async () => {
 
     const SHEET_URL =
-        "https://docs.google.com/spreadsheets/d/1SOF4f57namJJrB2NUeStVQeaNTyPIQkTobpdcoPmFKA/export?format=csv";
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhRLZM2wEhW7Y9JzwOziryys47O1-B57W0jV9FuyucLaQTcvu-SRzIFjh3oTI7IOY_Afw90mvS270B/pub?output=csv";
 
     const params = new URLSearchParams(window.location.search);
     const guestId = params.get("id");
