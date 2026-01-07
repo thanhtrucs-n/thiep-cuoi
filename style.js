@@ -102,13 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const guestId = params.get("id");
 
-    const guestElement =
-        document.getElementById("guestName") ||
-        document.querySelector(".guest-name");
+    const guestElement = document.querySelector(".guest-name#guestName");
 
-    if (guestElement) {
-        guestElement.textContent = guests[guestId] || "Quý khách";
-    }
+if (guestElement) {
+    guestElement.textContent = guests[guestId] || "Quý khách";
+}
 
     document.querySelectorAll("a[href]").forEach(link => {
         if (!guestId) return;
