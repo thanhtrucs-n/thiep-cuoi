@@ -190,4 +190,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (e) {
         guestElement.textContent = "Quý khách";
     }
+     // Giữ ID khi bấm menu
+     document.querySelectorAll("a[href]").forEach(link => {
+        if (!guestId) return;
+
+        const url = new URL(link.href, window.location.origin);
+        if (!url.searchParams.has("id")) {
+            url.searchParams.set("id", guestId);
+            link.href = url.toString();
+        }
+    });
 });
