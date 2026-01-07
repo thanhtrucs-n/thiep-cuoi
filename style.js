@@ -118,3 +118,10 @@ const guestElement =
 if (guestElement) {
     guestElement.textContent = guests[guestId] || "Quý khách";
 }
+// GIỮ ID KHI CLICK MENU
+document.querySelectorAll("a").forEach(link => {
+    const id = new URLSearchParams(window.location.search).get("id");
+    if (id && link.href.includes(".html")) {
+        link.href += `?id=${id}`;
+    }
+});
