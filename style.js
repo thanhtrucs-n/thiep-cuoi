@@ -90,44 +90,34 @@ setInterval(createFallingHeart, 400);
 
 
 
-// ===============================
-// DANH SÁCH KHÁCH MỜI (ID → TÊN)
-// ===============================
-const guests = {
-    khach01: "Bạn Tuyết",
-    khach02: "Anh Minh",
-    khach03: "Chị Lan",
-    khach04: "Gia đình Anh Hùng"
-};
+document.addEventListener("DOMContentLoaded", () => {
 
-// ===============================
-// LẤY ID TỪ URL
-// ===============================
-const params = new URLSearchParams(window.location.search);
-const guestId = params.get("id");
+    const guests = {
+        khach01: "Bạn Tuyết",
+        khach02: "Anh Minh",
+        khach03: "Chị Lan",
+        khach04: "Gia đình Anh Hùng"
+    };
 
-// ===============================
-// GÁN TÊN VÀO HTML
-// ===============================
-const guestElement =
-    document.getElementById("guestName") ||
-    document.querySelector(".guest-name");
+    const params = new URLSearchParams(window.location.search);
+    const guestId = params.get("id");
 
-if (guestElement) {
-    guestElement.textContent = guests[guestId] || "Quý khách";
-}
+    const guestElement =
+        document.getElementById("guestName") ||
+        document.querySelector(".guest-name");
 
-// ===============================
-// GIỮ ID KHI CLICK MENU (CHUẨN)
-// ===============================
-document.querySelectorAll("a[href]").forEach(link => {
-    if (!guestId) return;
-
-    const url = new URL(link.href, window.location.origin);
-
-    // chỉ thêm nếu chưa có id
-    if (!url.searchParams.has("id")) {
-        url.searchParams.set("id", guestId);
-        link.href = url.toString();
+    if (guestElement) {
+        guestElement.textContent = guests[guestId] || "Quý khách";
     }
+
+    document.querySelectorAll("a[href]").forEach(link => {
+        if (!guestId) return;
+
+        const url = new URL(link.href, window.location.origin);
+        if (!url.searchParams.has("id")) {
+            url.searchParams.set("id", guestId);
+            link.href = url.toString();
+        }
+    });
+
 });
