@@ -90,7 +90,6 @@ setInterval(createFallingHeart, 400);
 
 
 
-
 // ===============================
 // DANH SÁCH KHÁCH MỜI (ID → TÊN)
 // ===============================
@@ -103,7 +102,6 @@ const guests = {
 
 // ===============================
 // LẤY ID TỪ URL
-// Ví dụ: index.html?id=khach01
 // ===============================
 const params = new URLSearchParams(window.location.search);
 const guestId = params.get("id");
@@ -118,10 +116,18 @@ const guestElement =
 if (guestElement) {
     guestElement.textContent = guests[guestId] || "Quý khách";
 }
-// GIỮ ID KHI CLICK MENU
-document.querySelectorAll("a").forEach(link => {
-    const id = new URLSearchParams(window.location.search).get("id");
-    if (id && link.href.includes(".html")) {
-        link.href += `?id=${id}`;
+
+// ===============================
+// GIỮ ID KHI CLICK MENU (CHUẨN)
+// ===============================
+document.querySelectorAll("a[href]").forEach(link => {
+    if (!guestId) return;
+
+    const url = new URL(link.href, window.location.origin);
+
+    // chỉ thêm nếu chưa có id
+    if (!url.searchParams.has("id")) {
+        url.searchParams.set("id", guestId);
+        link.href = url.toString();
     }
 });
