@@ -160,27 +160,19 @@ setInterval(createFallingHeart, 400);
 document.addEventListener("DOMContentLoaded", async () => {
 
     const SHEET_URL =
-        "https://docs.google.com/spreadsheets/d/1SOF4f57namJJrB2NUeStVQeaNTyPIQkTobpdcoPmFKA/edit?gid=0#gid=0";
+        "https://docs.google.com/spreadsheets/d/1SOF4f57namJJrB2NUeStVQeaNTyPIQkTobpdcoPmFKA/export?format=csv";
 
     const params = new URLSearchParams(window.location.search);
     const guestId = params.get("id");
 
-    const guestElement =
-        document.getElementById("guestName") ||
-        document.querySelector(".guest-name");
-
+    const guestElement = document.querySelector(".guest-name#guestName");
     if (!guestElement) return;
-
-    if (!guestId) {
-        guestElement.textContent = "Quý khách";
-        return;
-    }
 
     try {
         const res = await fetch(SHEET_URL);
         const text = await res.text();
 
-        const rows = text.split("\n").slice(1);
+        const rows = text.trim().split("\n").slice(1);
         const guests = {};
 
         rows.forEach(row => {
@@ -190,21 +182,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         guestElement.textContent = guests[guestId] || "Quý khách";
 
-    } catch (e) {
+    } catch {
         guestElement.textContent = "Quý khách";
     }
 
-    // =========================
-    // GIỮ ID KHI BẤM MENU
-    // =========================
-    document.querySelectorAll("a[href]").forEach(link => {
-        if (!guestId) return;
-
-        const url = new URL(link.href, window.location.origin);
-        if (!url.searchParams.has("id")) {
-            url.searchParams.set("id", guestId);
-            link.href = url.toString();
-        }
-    });
+    // ✅ GIỮ ID KHI BẤM MENU
+    if (guestId) {
+        document.querySelectorAll("a[href]").forEach(link => {
+            const url = new URL(link.href, window.location.origin);
+            if (!url.searchParams.has("id")) {
+                url.searchParams.set("id", guestId);
+                link.href = url.toString();
+            }
+        });
+    }
 });
 
