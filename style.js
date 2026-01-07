@@ -165,7 +165,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const params = new URLSearchParams(window.location.search);
     const guestId = params.get("id");
 
-    const guestElement = document.querySelector(".guest-name#guestName");
+    const guestElement =
+        document.getElementById("guestName") ||
+        document.querySelector(".guest-name");
+
     if (!guestElement) return;
 
     if (!guestId) {
@@ -190,8 +193,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (e) {
         guestElement.textContent = "Quý khách";
     }
-     // Giữ ID khi bấm menu
-     document.querySelectorAll("a[href]").forEach(link => {
+
+    // =========================
+    // GIỮ ID KHI BẤM MENU
+    // =========================
+    document.querySelectorAll("a[href]").forEach(link => {
         if (!guestId) return;
 
         const url = new URL(link.href, window.location.origin);
@@ -201,3 +207,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 });
+
